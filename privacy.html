@@ -24,7 +24,8 @@
     <p>以下のデータは、機能の提供のためにデバイス内（および同一デバイス内のウィジェット共有領域）にのみ保存されます。</p>
     <ul>
       <li>作成したアラームの設定（時刻・繰り返し・ミッション・サウンド等）</li>
-      <li>起床記録（アラーム停止時刻・ミッション種別・スヌーズ回数）</li>
+      <li>起床記録（アラーム停止時刻・ミッション種別・スヌーズ回数・就寝時刻を記録した場合はその時刻）</li>
+      <li>タグミッション用に登録したNFCタグ／バーコードの<strong>一方向ハッシュ</strong>と名前（元の識別番号やバーコード番号は保存しません）</li>
       <li>アプリ内設定</li>
     </ul>
     <p>これらのデータが開発者や第三者に送信されることはありません。アプリを削除すると、これらのデータも削除されます。</p>
@@ -33,7 +34,10 @@
     <ul>
       <li><strong>通知</strong> — アラームを鳴らすために使用します。</li>
       <li><strong>アラーム（iOS 26以降のAlarmKit）</strong> — サイレントモード中でも確実にアラームを鳴らすために使用します。</li>
-      <li><strong>モーションデータ</strong> — 起床ミッション（シェイク・歩数）の計測のみに使用し、デバイス外へは一切送信されません。</li>
+      <li><strong>モーションデータ</strong> — 起床ミッション（シェイク・歩数）の計測、およびApple Watchでのスマート起床（手首の動きから浅い眠りを検知）のみに使用し、デバイス外へは一切送信されません。</li>
+      <li><strong>カメラ</strong> — 写真ミッションとバーコードミッションの読み取りにのみ使用します。撮影した画像やバーコードは保存・送信されません（写真ミッションの基準写真のみ端末内に保存）。</li>
+      <li><strong>NFC</strong> — タグミッションでNFCタグやICカードのID読み取りにのみ使用します。IDそのものは保存せず、一方向ハッシュのみを端末内に保存します。</li>
+      <li><strong>カレンダー</strong> — 「予定に合わせる」機能で、アラーム当日の最初の予定の開始時刻とタイトルを読み取るためにのみ使用します（読み取り専用）。予定の内容が開発者や第三者に送信されることはありません。</li>
     </ul>
 
     <h2>3. App内課金</h2>
@@ -61,7 +65,10 @@
     <ul>
       <li><strong>Notifications</strong> — used to ring your alarms.</li>
       <li><strong>Alarms (AlarmKit, iOS 26+)</strong> — used to ring reliably even in Silent mode.</li>
-      <li><strong>Motion</strong> — used only to count shakes and steps for wake-up missions; never leaves your device.</li>
+      <li><strong>Motion</strong> — used only to count shakes and steps for wake-up missions and, on Apple Watch, to detect light sleep for smart wake; never leaves your device.</li>
+      <li><strong>Camera</strong> — used only for the photo and barcode missions. Frames and barcodes are never stored or uploaded (only the photo mission's reference shot is kept on device).</li>
+      <li><strong>NFC</strong> — used only to read the ID of your tag or IC card for the tag mission. The ID itself is never stored; only a one-way hash is kept on device.</li>
+      <li><strong>Calendar</strong> — read-only, used only by "Match my calendar" to see the start time and title of the first event on the alarm day. Nothing about your events is sent anywhere.</li>
     </ul>
     <h2>Purchases</h2>
     <p>OKIRO Pro subscriptions are processed by Apple. We never access your payment details.</p>
