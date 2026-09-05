@@ -38,6 +38,7 @@
       <li><strong>カメラ</strong> — 写真ミッションとバーコードミッションの読み取りにのみ使用します。撮影した画像やバーコードは保存・送信されません（写真ミッションの基準写真のみ端末内に保存）。</li>
       <li><strong>NFC</strong> — タグミッションでNFCタグやICカードのID読み取りにのみ使用します。IDそのものは保存せず、一方向ハッシュのみを端末内に保存します。</li>
       <li><strong>カレンダー</strong> — 「予定に合わせる」機能で、アラーム当日の最初の予定の開始時刻とタイトルを読み取るためにのみ使用します（読み取り専用）。予定の内容が開発者や第三者に送信されることはありません。</li>
+      <li><strong>ヘルスケア（HealthKit）</strong> — 「睡眠分析」機能で、Apple Watch などがヘルスケアに記録した睡眠段階・心拍数・安静時心拍数・心拍変動・呼吸数・血中酸素を<strong>読み取り専用</strong>で参照します。OKIRO がヘルスケアに書き込むことはありません。読み取ったデータは画面に表示している間だけ端末のメモリに保持され、<strong>端末内のいかなる保存領域にも保存せず</strong>、開発者・第三者・ウィジェットにも渡しません。ヘルスケアのデータはいかなる目的でもマーケティングや広告に使用されません。</li>
     </ul>
 
     <h2>3. App内課金</h2>
@@ -69,6 +70,7 @@
       <li><strong>Camera</strong> — used only for the photo and barcode missions. Frames and barcodes are never stored or uploaded (only the photo mission's reference shot is kept on device).</li>
       <li><strong>NFC</strong> — used only to read the ID of your tag or IC card for the tag mission. The ID itself is never stored; only a one-way hash is kept on device.</li>
       <li><strong>Calendar</strong> — read-only, used only by "Match my calendar" to see the start time and title of the first event on the alarm day. Nothing about your events is sent anywhere.</li>
+      <li><strong>Health (HealthKit)</strong> — <strong>read-only</strong>, used only by "Sleep analysis" to show the sleep stages, heart rate, resting heart rate, heart rate variability, respiratory rate and blood oxygen that your Apple Watch or other apps already recorded in Health. OKIRO never writes to Health. What it reads is held in memory only while the screen is showing it, is <strong>never stored anywhere on the device</strong>, and is never shared with the developer, third parties or the widget. Health data is never used for marketing or advertising of any kind.</li>
     </ul>
     <h2>Purchases</h2>
     <p>OKIRO Pro subscriptions are processed by Apple. We never access your payment details.</p>
