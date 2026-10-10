@@ -15,7 +15,7 @@
   <div class="card">
     <span class="badge">Privacy Policy</span>
     <h1>プライバシーポリシー</h1>
-    <p class="muted">発効日: 2026年8月16日</p>
+    <p class="muted">発効日: 2026年8月16日 ／ 最終更新日: 2026年10月10日</p>
 
     <h2>要約 — あなたのデータは収集しません</h2>
     <p>OKIRO（以下「本アプリ」）は、<strong>いかなる個人情報・利用データも収集、送信、共有しません</strong>。アラーム、起床記録、設定を含むすべてのデータは、お使いのデバイス内にのみ保存されます。アカウント登録は不要で、広告や外部トラッキングSDKも一切含まれていません。</p>
@@ -26,6 +26,7 @@
       <li>作成したアラームの設定（時刻・繰り返し・ミッション・サウンド等）</li>
       <li>起床記録（アラーム停止時刻・ミッション種別・スヌーズ回数・就寝時刻を記録した場合はその時刻）</li>
       <li>タグミッション用に登録したNFCタグ／バーコードの<strong>一方向ハッシュ</strong>と名前（元の識別番号やバーコード番号は保存しません）</li>
+      <li>いびき録音を使った夜の記録（いびきの時間・回数・スコア・タイムラインなどの数値と、下記「マイク」に記載の短い音声クリップ）</li>
       <li>アプリ内設定</li>
     </ul>
     <p>これらのデータが開発者や第三者に送信されることはありません。アプリを削除すると、これらのデータも削除されます。</p>
@@ -38,7 +39,9 @@
       <li><strong>カメラ</strong> — 写真ミッションとバーコードミッションの読み取りにのみ使用します。撮影した画像やバーコードは保存・送信されません（写真ミッションの基準写真のみ端末内に保存）。</li>
       <li><strong>NFC</strong> — タグミッションでNFCタグやICカードのID読み取りにのみ使用します。IDそのものは保存せず、一方向ハッシュのみを端末内に保存します。</li>
       <li><strong>カレンダー</strong> — 「予定に合わせる」機能で、アラーム当日の最初の予定の開始時刻とタイトルを読み取るためにのみ使用します（読み取り専用）。予定の内容が開発者や第三者に送信されることはありません。</li>
-      <li><strong>ヘルスケア（HealthKit）</strong> — 「睡眠分析」機能で、Apple Watch などがヘルスケアに記録した睡眠段階・心拍数・安静時心拍数・心拍変動・呼吸数・血中酸素を<strong>読み取り専用</strong>で参照します。OKIRO がヘルスケアに書き込むことはありません。読み取ったデータは画面に表示している間だけ端末のメモリに保持され、<strong>端末内のいかなる保存領域にも保存せず</strong>、開発者・第三者・ウィジェットにも渡しません。ヘルスケアのデータはいかなる目的でもマーケティングや広告に使用されません。</li>
+      <li><strong>マイク</strong> — 「いびき録音」機能でのみ使用します。<strong>夜ごとのオプトイン</strong>で、ご自身で「寝る」をタップした夜だけ、そこからアラームを止めるまで録音・解析します。音声の解析はすべて<strong>端末内</strong>で行われ、音声・解析結果ともに開発者や第三者へ<strong>一切送信されません</strong>。保存されるのは、1晩あたり最大12件・1件10秒以内の、いびきが最も大きかった場面の短い音声クリップ（AAC形式）と数値の記録だけで、それ以外の音声は保存せず破棄されます。クリップと記録はアプリ専用の保存領域（他のアプリやウィジェットと共有しない領域）に保存され、<strong>30日を過ぎると自動的に削除</strong>されます（スターを付けたクリップも、その夜の記録とともに削除されます）。音声クリップは<strong>iCloud／端末のバックアップから除外</strong>されます（数値の記録はアプリの他のデータと同様、お使いのデバイスのバックアップに含まれることがあります）。クリップと記録は「設定」からいつでも削除できます。</li>
+      <li><strong>ヘルスケア（HealthKit）</strong> — 「睡眠分析」機能で、Apple Watch などがヘルスケアに記録した次のデータを<strong>読み取り専用</strong>で参照します：睡眠分析（睡眠段階）、心拍数、安静時心拍数、心拍変動（HRV）、呼吸数、血中酸素、睡眠中の手首皮膚温、環境音レベル（周囲の音の大きさ）、日光を浴びた時間、アクティブエネルギー（活動量）、睡眠時無呼吸の通知（iOS 18以降）。OKIRO がヘルスケアに書き込むことはありません。読み取ったデータは画面に表示している間だけ端末のメモリに保持され、<strong>端末内に保存せず</strong>、開発者・第三者・ウィジェットにも渡しません。例外は、ご自身で「書き出し」を選んだ場合に共有シートへ渡すため一時領域に作成されるCSVファイルのみで、次回の書き出し時に置き換えられます。ヘルスケアのデータはいかなる目的でもマーケティングや広告に使用されません。</li>
+      <li><strong>ウィジェット／ライブアクティビティ</strong> — 次のアラーム、連続起床記録、昨夜のいびきの要約を表示するため、同じデバイス内のウィジェット共有領域に小さな要約を保存します。録音中のロック画面表示（ライブアクティビティ）も端末内だけで更新され、Appleのプッシュ通知サービスやサーバーは使用しません。いずれも端末外へは送信されません。</li>
     </ul>
 
     <h2>3. App内課金</h2>
@@ -54,14 +57,14 @@
     <p>本ポリシーを変更する場合は、本ページを更新し、重要な変更がある場合はアプリ内で通知します。</p>
 
     <h2>7. お問い合わせ</h2>
-    <p>本ポリシーに関するご質問は <a href="mailto:kakuseipeterjacson0620@gmail.com">kakuseipeterjacson0620@gmail.com</a> までご連絡ください。</p>
+    <p>本ポリシーに関するご質問は <a href="mailto:kaiseiota0620@gmail.com">kaiseiota0620@gmail.com</a> までご連絡ください。</p>
 
     <hr class="divider">
 
     <h1>Privacy Policy (English)</h1>
-    <p class="muted">Effective date: August 16, 2026</p>
+    <p class="muted">Effective date: August 16, 2026 / Last updated: October 10, 2026</p>
     <h2>Summary — We collect nothing</h2>
-    <p>OKIRO does <strong>not collect, transmit, or share any personal information or usage data</strong>. All of your data — alarms, wake logs, and settings — is stored only on your device (and the widget's shared container on the same device). No account is required. The app contains no ads and no third-party tracking SDKs.</p>
+    <p>OKIRO does <strong>not collect, transmit, or share any personal information or usage data</strong>. All of your data — alarms, wake logs, snore-recording nights, and settings — is stored only on your device (and the widget's shared container on the same device). No account is required. The app contains no ads and no third-party tracking SDKs.</p>
     <h2>Permissions</h2>
     <ul>
       <li><strong>Notifications</strong> — used to ring your alarms.</li>
@@ -70,12 +73,14 @@
       <li><strong>Camera</strong> — used only for the photo and barcode missions. Frames and barcodes are never stored or uploaded (only the photo mission's reference shot is kept on device).</li>
       <li><strong>NFC</strong> — used only to read the ID of your tag or IC card for the tag mission. The ID itself is never stored; only a one-way hash is kept on device.</li>
       <li><strong>Calendar</strong> — read-only, used only by "Match my calendar" to see the start time and title of the first event on the alarm day. Nothing about your events is sent anywhere.</li>
-      <li><strong>Health (HealthKit)</strong> — <strong>read-only</strong>, used only by "Sleep analysis" to show the sleep stages, heart rate, resting heart rate, heart rate variability, respiratory rate and blood oxygen that your Apple Watch or other apps already recorded in Health. OKIRO never writes to Health. What it reads is held in memory only while the screen is showing it, is <strong>never stored anywhere on the device</strong>, and is never shared with the developer, third parties or the widget. Health data is never used for marketing or advertising of any kind.</li>
+      <li><strong>Microphone</strong> — used only by the snore recorder, and <strong>opt-in night by night</strong>: it listens only on a night you start it with "I'm going to bed", until you clear the alarm. All analysis happens <strong>on the device</strong>; neither audio nor results are <strong>ever transmitted</strong> to the developer or anyone else. All that is kept is the night's numbers and at most 12 short audio clips per night, each no longer than 10 seconds (AAC), of the loudest snoring; all other audio is discarded. Clips and nights are stored in the app's own private container (not shared with other apps or the widget) and are <strong>deleted automatically after 30 days</strong> — starred clips go with their night. Audio clips are <strong>excluded from iCloud and device backups</strong> (the numbers may be included in your device backup, like the rest of the app's data). You can delete clips and nights at any time in Settings.</li>
+      <li><strong>Health (HealthKit)</strong> — <strong>read-only</strong>, used only by "Sleep analysis" to show what your Apple Watch or other apps already recorded in Health: sleep analysis (stages), heart rate, resting heart rate, heart rate variability, respiratory rate, blood oxygen, sleeping wrist temperature, environmental audio exposure, time in daylight, active energy, and sleep apnea notifications (iOS 18+). OKIRO never writes to Health. What it reads is held in memory only while the screen is showing it, is <strong>not stored on the device</strong>, and is never shared with the developer, third parties or the widget — the one exception being a CSV file you choose to export, created in temporary storage for the share sheet and replaced by the next export. Health data is never used for marketing or advertising of any kind.</li>
+      <li><strong>Widgets and Live Activity</strong> — a small summary (next alarm, wake streak, last night's snoring) is kept in the widget's shared container on the same device. The lock-screen Live Activity shown while recording is updated on the device only; no push service or server is involved. None of it leaves your device.</li>
     </ul>
     <h2>Purchases</h2>
     <p>OKIRO Pro subscriptions are processed by Apple. We never access your payment details.</p>
     <h2>Contact</h2>
-    <p><a href="mailto:kakuseipeterjacson0620@gmail.com">kakuseipeterjacson0620@gmail.com</a></p>
+    <p><a href="mailto:kaiseiota0620@gmail.com">kaiseiota0620@gmail.com</a></p>
   </div>
 </main>
 <footer>
